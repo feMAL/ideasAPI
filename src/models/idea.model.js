@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const IdeaSchema = new Schema({
-    idea: {type: String, require: true },
-    description: { type: String, require: true},
+    idea: {type: String, required: true },
+    description: { type: String, required: true},
     upvotes: [{type:Boolean}],
     downvotes: [{type:Boolean}],
     author: {
