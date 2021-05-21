@@ -6,4 +6,4 @@ class HomeService {
     }
 }
 
-module.exports = HomeServices;
+module.exports = HomeService;
