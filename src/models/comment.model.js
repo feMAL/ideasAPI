@@ -7,7 +7,7 @@ const CommentSchema = new Schema({
     author: {
         type: Schema.Types.ObjectId,
         ref: 'user',
-        require: true,
+        required: true,
         autopopulate: true
     }
 });
