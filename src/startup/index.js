@@ -16,7 +16,6 @@ class Server {
                 if(err) reject(err);
                 console.log(_config.APPLICATION_NAME + 'API running on port: ' + _config.PORT);
             });
-
             resolve();
         });
     }

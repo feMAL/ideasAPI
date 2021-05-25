@@ -1,6 +1,7 @@
+let _repository = null
 class BaseService {
     constructor(repository){
-        this.repository = repository
+        _repository = repository;
     }
 
     async get(id){
@@ -10,7 +11,7 @@ class BaseService {
             error.message = 'id must be send';
             throw error;
         }
-        const currentEntity = await this.repository.get(id);
+        const currentEntity = await _repository.get(id);
 
         if(!currentEntity){
             const error = new Error();
@@ -23,11 +24,11 @@ class BaseService {
     }
 
     async getAll(){
-        return await this.repository.getAll();
+        return await _repository.getAll();
     }
 
     async create(entity){
-        return await this.repository.create(entity);
+        return await _repository.create(entity);
     }
 
     async update(id, entity){
@@ -48,7 +49,7 @@ class BaseService {
             error.message = 'id must be sent';
             throw error;
         }
-        return await this.repository.delete(id);
+        return await _repository.delete(id);
     }
 
 }
